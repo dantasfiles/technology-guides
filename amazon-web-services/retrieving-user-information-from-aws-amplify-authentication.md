@@ -20,16 +20,16 @@ Described in the [AWS Amplify: Retrieve Current Session](https://aws-amplify.git
 The contents of these three tokens are described in the [AWS Cognito: Using Tokens](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html) documentation.  
 For the default `amplify add auth` settings, the object returned by the `Auth.currentSession()` method has the following form:
 
-```json
+```js
 {  
   "accessToken": {  
     "jwtToken": "XXXX",  
     "payload": {  
-      "auth_time": "XXXX",  
+      "auth_time": XXXX,  
       "client_id": "XXXX",  
       "event_id": "XXXX-XXXX-XXXX-XXXX-XXXX",  
-      "exp": "XXXX",  
-      "iat": "XXXX",  
+      "exp": XXXX,  
+      "iat": XXXX,  
       "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_XXXX",  
       "jti": "XXXX-XXXX-XXXX-XXXX-XXXX",  
       "scope": "aws.cognito.signin.user.admin",  
@@ -48,8 +48,8 @@ For the default `amplify add auth` settings, the object returned by the `Auth.cu
       "email": "MY EMAIL ADDRESS",  
       "email_verified": true,  
       "event_id": "XXXX-XXXX-XXXX-XXXX-XXXX",  
-      "exp": "XXXX",  
-      "iat": "XXXX",  
+      "exp": XXXX,  
+      "iat": XXXX,  
       "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_XXXX",  
       "sub": "INTERNAL USERID: XXXX-XXXX-XXXX-XXXX-XXXX",  
       "token_use": "id"  
@@ -66,7 +66,7 @@ For the default `amplify add auth` settings, the object returned by the `Auth.cu
 The `Auth.currentUserInfo()` method retrieves the [AWS Cognito User Attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html) for the current user.  
 For the default `amplify add auth` settings, the object returned by the `Auth.currentUserInfo()` method has the following form:
 
-```json
+```js
 {  
   "attributes": {  
     "email": "MY EMAIL ADDRESS",  
@@ -83,11 +83,11 @@ For the default `amplify add auth` settings, the object returned by the `Auth.cu
 Described in the [AWS Amplify: Retrieve Current Authenticated User](https://aws-amplify.github.io/docs/js/authentication#retrieve-current-authenticated-user) documentation, the `Auth.currentAuthenticatedUser()` method returns a combination of the result of the `Auth.currentUserInfo()` method, the result of the `Auth.currentSession()`  method, and some extra information.  
 For the default `amplify add auth` settings, the `Auth.currentUserPoolUser()` method returns the same object as the `Auth.currentAuthenticatedUser()` method, and that object has the following form:
 
-```json
+```js
 {  
   "Session": null,  
   "attributes": {  
-    "... SAME AS AUTH.CURRENTUSERINFO()"
+    // ... SAME AS AUTH.CURRENTUSERINFO()
   },  
   "authenticationFlowType": "USER_SRP_AUTH",  
   "client": {  
@@ -102,14 +102,14 @@ For the default `amplify add auth` settings, the `Auth.currentUserPoolUser()` me
       "userAgent": "aws-amplify/0.1.x react-native"  
     },  
     "clientId": "XXXX",  
-    "storage": "Function MemoryStorage",  
+    "storage": Function MemoryStorage,  
     "userPoolId": "us-east-1_XXXX"  
   },  
   "preferredMFA": "NOMFA",  
   "signInUserSession": {  
-     "... THE ACCESS, ID & REFRESH TOKENS OF AUTH.CURRENTSESSION()"
+     // ... THE ACCESS, ID & REFRESH TOKENS OF AUTH.CURRENTSESSION()
  },  
-  "storage": "Function MemoryStorage",  
+  "storage": "Function MemoryStorage,  
   "userDataKey": "CognitoIdentityServiceProvider.XXXX.XXXX.userData",  
   "username": "MY USERNAME"  
 }
